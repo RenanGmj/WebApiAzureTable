@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiAzureTable")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fea9c9f48e8d238531d1f0931e6da85d5cf1cb65")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiAzureTable")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiAzureTable")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

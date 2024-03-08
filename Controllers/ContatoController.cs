@@ -41,5 +41,42 @@ namespace WebApiAzureTable.Controllers
             return Ok(contato);
             
         }
+
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(string id, Contato contato)
+        {
+            var tableClient = GetTableClient();
+            var contatoTable = tableClient.GetEntity<Contato>(id, id).Value;
+
+            contatoTable.Name = contato.Name;
+            contatoTable.Email = contato.Email;
+            contatoTable.Telefone = contato.Telefone;
+
+            tableClient.UpsertEntity(contatoTable);
+            return Ok();
+
+        }
+
+
+        [HttpGet("Listar")]
+        public IActionResult ObterTodos()
+        {
+            var tableClient = GetTableClient();
+            var contato = tableClient.Query<Contato>().ToList();
+            return Ok(contato);
+
+
+        }
+
+        [HttpGet("ObterPorNome/{name}")]
+        public IActionResult ObterPorNome(string name)
+        {
+            var tableClient = GetTableClient();
+            var contatos = tableClient.Query<Contato>(x => x.Name == name).ToList();
+            return Ok(contatos);
+        }
+
+
     }
 }
